@@ -4,608 +4,553 @@ body {
     color: $text;
     background-color: $background;
     line-height: 1.6;
+    overflow-x: hidden;
 }
+
+#container {
+    margin: 0 auto;
+
+    @media screen and (min-width: 701px) {
+        max-width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+        width: 95%;
+    }
+}
+
 a {
     color: $link;
     &:hover {
-        color: $hover;
+        color: $link-hover;
     }
-    &.keyword {
-        text-decoration: none;
-        border-bottom: 1px dotted $border;
-        color: $text;
-    }
+    // TODO
+    // &.keyword {
+    //     text-decoration: none;
+    //     border-bottom: 1px dotted $border;
+    //     color: $text;
+    // }
 }
 h1,h2,h3,h4,h5,h6 {
-    color: $text-header;
     line-height: 1.3;
-    a {
-        color: $text-header;
-        text-decoration: none;
-        &:hover {
-            color: $hover;
-        }
-    }
+    // a {
+    //     color: $text-header;
+    //     text-decoration: none;
+    //     &:hover {
+    //         color: $hover;
+    //     }
+    // }
 }
 
-/* ヘッダ（グローバルヘッダ）
-  グローバルヘッダの中はiframeですが、
-  #globalheader-container に背景色や文字色を指定することでiframeの中にも色が反映されます。
-*/
-#globalheader-container {
-    background-color: $text;
-    color: $background;
-}
 
-/* container */
-#container,
-#footer {
-    padding-left: 10px;
-    padding-right: 10px;
-    @media #{$mq-sm} {
-        width: 720px;
-        margin: auto;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    @media #{$mq-md} {
-        width: 940px;
-    }
-}
-
-/* 2カラムレイアウト */
-#content-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    @media #{$mq-sm} {
-        flex-direction: row;
-    }
-}
-#wrapper {
-    @media #{$mq-sm} {
-        width: 480px;
-    }
-    @media #{$mq-md} {
-        width: 600px;
-    }
-}
-#box2 {
-    @media #{$mq-sm} {
-        width: 200px;
-    }
-    @media #{$mq-md} {
-        width: 300px;
-    }
-}
-
-/* 下記のスタイルを適用するとテーマを1カラムレイアウトにできます。
-利用するにはコメントアウトを解除してください。
-（2カラムレイアウトの場合はコメントアウト全体が不要です）
-
-#content-inner {
-    flex-direction: column;
-    align-items: center;
-}
-#wrapper {
-    @media #{$mq-sm} {
-        width: 100%;
-    }
-    @media #{$mq-md} {
-        max-width: 720px;
-    }
-}
-#box2 {
-    width: 100%;
-    @media #{$mq-sm} {
-        width: 100%;
-    }
-    @media #{$mq-md} {
-        width: 100%;
-    }
-}
-
-#box2-inner {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    @media #{$mq-sm} {
-        margin-left: -20px;
-        flex-direction: row;
-    }
-    @media #{$mq-md} {
-        margin-left: -30px;
-    }
-}
-.hatena-module {
-    width: 100%;
-    @media #{$mq-sm} {
-        width: 33.3333%;
-    }
-    @media #{$mq-md} {
-        padding-left: 30px;
-    }
-}
-
----- END 1カラム */
-
-/* ヘッダ */
-#blog-title {
-    margin: 2em 0;
+h1#title {
+    font-size: 2rem;
     text-align: center;
-    @media #{$mq-sm} {
-        margin: 3em 0;
-        text-align: left;
-    }
-}
-#title {
-    margin: 0;
-    font-size: 1.5rem;
-    @media #{$mq-md} {
-        font-size: 1.7rem;
-    }
+    margin: 4rem 0;
+
+    background: $title;
+    background-clip: text;
+    -webkit-background-clip: text;
+
     a {
-        color: $text;
-    }
-}
-#blog-description {
-    font-weight: normal;
-    font-size: .8rem;
-    margin: 1em 0 0;
-}
-
-/* ヘッダ画像を設定したとき */
-.header-image-enable {
-    #blog-title {
-        margin: 0 0 2em;
-    }
-    #blog-title-inner {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    #blog-title-content {
-        margin-left: 10px;
-        margin-right: 10px;
+        color: #00000000; // 透明度0
+        background: $title;
+        background-clip: text;
+        -webkit-background-clip: text;
     }
 }
 
-/* タイトル下HTML */
-#top-editarea {
-    margin-bottom: 1em;
-}
+.ad {
+    min-height: 100px;
 
-/* パンくず（カテゴリー、記事ページで表示されます） */
-.breadcrumb {
-    font-size: .9rem;
-}
+    background-color: $ad-background;
+    border-radius: 7px;
+    overflow: scroll;
 
-/* entry */
-.entry {
-    position: relative;
-    margin-bottom: 4em;
-}
-.entry-header {
-    padding-bottom: 1em;
-    margin-bottom: 2em;
-    border-bottom: 1px solid $border;
-    position: relative;
-}
-.date {
-    margin-bottom: .5em;
-    font-size: .9rem;
-    a {
-        color: $text-light;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-.entry-title {
-    margin: 0 0 .3em;
-    font-size: 1.5rem;
-    @media #{$mq-md} {
-        font-size: 1.6rem;
-    }
-}
-.categories {
-    margin: .5em 0;
-    font-size: .9rem;
-    a {
-        margin-right: .5em;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
     }
 }
 
-/* 「編集する」ボタン */
-.entry-header-menu {
-    position: absolute;
-    top: 0;
-    right: 0;
+@media screen and (max-width: 700px) {
+    .article-list-ad {
+        min-height: 0px !important;
+    }
 }
 
-/* 記事内の書式 */
-.entry-content {
-    img,
-    video {
-        max-width: 100%;
-        height: auto;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 1em 0 0.8em 0;
-    }
-    h1 {
-        font-size: 1.5rem;
-        @media #{$mq-md} {
-            font-size: 1.7rem;
-        }
-    }
-    h2 {
-        font-size: 1.4rem;
-        @media #{$mq-md} {
-            font-size: 1.5rem;
-        }
-    }
-    h3 {
-        font-size: 1.2rem;
-        @media #{$mq-md} {
-            font-size: 1.3rem;
-        }
-    }
-    h4 {
-        font-size: 1.1rem;
-    }
-    h5 {
-        font-size: 1rem;
-    }
-    h6 {
+.archive-entry {
+    box-shadow: $box-shadow;
+    margin: 2rem 0;
+    border-radius: 15px;
+
+    padding: 1.5rem 1rem 1rem 1rem;
+
+    .archive-date a {
         font-size: .9rem;
+        color: $datetime;
+        text-decoration: none;
+
+        &:hover {
+            color: $link-hover3;
+        }
     }
-    ul,
-    ol,
-    dd {
-        margin: 0 0 1em 1.5em;
-        padding: 0;
-        li {
-            ul,ol {
-                margin-bottom: 0;
+
+    .entry-title {
+        margin: .5rem 0;
+
+        a {
+            color: $text;
+            text-decoration: none;
+
+            &:hover {
+                color: $link-hover2;
             }
         }
     }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        border-bottom: 1em;
-        margin-bottom: 1em;
-        width: 100%;
-        overflow: auto;
-        display: block;
-        font-size: .8rem;
-        @media #{$mq-md} {
-            font-size: .9rem;
-        }
-    }
-    table th,
-    table td {
-        border: 1px solid $border;
-        padding: 5px 10px;
-    }
-    table th {
-        background: $bg-light;
+
+    .entry-description {
+        color: $accent;
     }
 
-    blockquote {
-        border: 1px solid $border;
-        margin: 0 0 10px;
-        padding: 20px;
-        p:first-of-type {
-            margin-top: 0;
-        }
-        p:last-of-type {
-            margin-bottom: 0;
-        }
-    }
-    pre,
-    code {
-        font-family: $font-family-monospace;
-    }
-    pre {
-        background: $bg-light;
-        border: none;
-        white-space: pre-wrap;
-        text-overflow: ellipsis;
-        line-height: 1.3;
-        font-size: .8rem;
-        padding: 10px;
-        & > code {
-            margin: 0;
-            padding: 0;
-            white-space: pre;
-            border: none;
-            background-color: transparent;
-            font-family: $font-family-monospace;
-        }
-    }
-    code {
-        font-size: 90%;
-        margin: 0 2px;
-        padding: 0px 5px;
-        background-color: $bg-light;
-        border-radius: 3px;
-    }
-    hr {
-        width: 50%;
-        border: 0;
-        border: none;
-        border-top: 1px solid $border;
-        margin: 2em auto;
-    }
-    .table-of-contents {
-        padding: 1em 1em 1em 2em;
-        margin: 1em 0;
-        border: 1px solid $border;
-    }
-}
+    .categories {
+        margin-bottom: 1rem;
 
-/* 記事下 */
-.entry-footer {
-    .social-buttons {
-        margin-bottom: 1em;
-    }
-}
-.entry-footer-section {
-    color: $text-light;
-    font-size: .9rem;
-    a {
-        color: $text-light;
-    }
-}
+        a {
+            font-size: .8rem;
+            background-color: $category-background;
+            padding: 0 .4rem;
+            border-radius: 3px;
+            color: $category;
+            font-weight: bold;
+            text-decoration: none;
 
-/* コメント */
-.comment-box {
-    margin: 1em 0;
-    .comment {
-        list-style: none;
-        margin: 0 0 15px 0;
-        padding: 0;
-        line-height: 1.7;
-        font-size: .85rem;
-        @media #{$mq-sm} {
-            font-size: .9rem;
+            &:hover {
+                color: $link-hover3;
+            }
         }
     }
-    .entry-comment {
-        padding: 10px 0 10px 60px;
-        border-bottom: 1px solid $border;
-        position: relative;
-        &:first-child {
-            border-top: 1px solid $border;
-        }
-    }
-    .read-more-comments {
-        padding: 10px 0;
-    }
-    .hatena-id-icon {
-        position: absolute;
-        top: 10px;
-        left: 0;
-        width: 50px !important;
-        height: 50px !important;
-        border-radius: 3px;
-    }
-}
-.comment-user-name {
-    margin: 0 0 .4em 0;
-    font-weight: bold;
-}
-.comment-content {
-    margin: 0 0 .4em 0;
-    word-wrap: break-word;
-    color: $text;
-    font-size: .85rem;
-    p {
-        margin: 0 0 .6em 0;
-    }
-}
-.comment-metadata {
-    color: $text-light;
-    margin: 0;
-    font-size: .8rem;
-    a {
-        color: $text-light;
-    }
-}
-.leave-comment-title {
-    padding: .6em 1em;
-    font-size: .85rem;
-    border: 1px solid $border;
-}
 
-/* Pager */
+    .archive-entry-tag .archive-entry-tag-link {
+        background: $tag-background;
+        font-weight: bold;
+
+        color: $tag;
+
+        padding: .2rem .4rem;
+    }
+
+    .entry-thumb {
+        border-radius: 7px;
+        box-shadow: 0px 0px 15px -5px  $shadow;
+    }
+}
 
 .pager {
-    margin: 2em 0;
+    margin: 1.5rem 0;
+    width: 100%;
+
     display: flex;
-    justify-content: space-between;
-}
+    justify-content: flex-end;
 
-/* サイドバーモジュール */
-.hatena-module {
-    box-sizing: border-box;
-    margin-bottom: 3em;
-    font-size: .85rem;
-    @media #{$mq-sm} {
-        font-size: .9rem;
-    }
-}
-.hatena-module-title {
-    margin-bottom: .6em;
-    padding-bottom: .2em;
-    border-bottom: 1px solid $border;
-    font-size: 1rem;
-    font-weight: bold;
-    a {
-        color: $text;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
-/* Profile module */
-.hatena-module-profile {
-    .profile-icon {
-        float: left;
-        margin: 0 10px 10px 0;
-    }
-    .id {
-        display: block;
+    .pager-next a {
+        color: $accent;
+        font-size: 1rem;
         font-weight: bold;
-        margin-bottom: .5em;
-    }
-    .profile-description {
-        p {
-            margin-top: 0;
+        text-decoration: none;
+
+        &::after {
+            content: '>';
+            margin-left: .5rem;
+
+        }
+        &:hover {
+            color: $link-hover3;
         }
     }
 }
 
-/* urllist module */
-.hatena-urllist {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-        padding: .5em 0;
-        &:last-child {
-            padding-bottom: 0;
+// カテゴリ検索時の結果
+.archive-header-category {
+    .archive-heading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .archive-description {
+        text-align: center;
+        color: $accent;
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 1rem;
+}
+
+// 検索結果
+.search-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .search-result-form {
+        border: 2px solid $border;
+        border-radius: 5px;
+
+        .search-result-input::placeholder {
+            color: $accent;
         }
+        .search-result-button {
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 401px) {
+             width: 400px;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 100%;
+        }
+    }
+}
+
+// 検索フォームモジュール
+.hatena-module-search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* 「検索」は表示させずフォームのみにする */
+    .hatena-module-title {
+        display: none;
+    }
+
+    .search-form {
+        border: 2px solid $border;
+        border-radius: 5px;
+        position: relative;
+
+        width: 400px;
+
+        @media screen and (max-width: 400px) {
+            width: 100%;
+        }
+
+        .search-module-input {
+            box-sizing: border-box;
+            padding: 5px;
+            background: none;
+            border: none;
+            outline: none;
+            height: 30px;
+            width: 90%;
+
+            &::placeholder {
+                color: $accent;
+            }
+        }
+
+        .search-module-button {
+            cursor: pointer;
+
+            width: 20px;
+            height: 20px;
+            background: transparent url(https://cdn.blog.st-hatena.com/images/theme/search.png) no-repeat right center;
+            border: none;
+            outline: none;
+            text-indent: -9999px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            -moz-opacity: .5;
+            opacity: .5;
+            -khtml-opacity: .5;
+            -webkit-opacity: .5;
+        }
+    }
+}
+
+.entry {
+    .entry-date {
         a {
+            font-size: .9rem;
+            color: $datetime;
             text-decoration: none;
+
             &:hover {
-                text-decoration: underline;
+                color: $link-hover3;
+            }
+        }
+
+        // TODO: SVGを中央に配置する
+        .date-last-updated {
+            font-size: .9rem;
+            color: $datetime;
+            text-align: center;
+        }
+    }
+
+    .entry-title {
+        margin: .5rem 0;
+
+        a {
+            color: $text;
+            text-decoration: none;
+            cursor: text;
+        }
+    }
+
+    .code {
+        background-color: $code-background;
+        padding: .7rem;
+        border-radius: 7px;
+    }
+
+    .entry-content code {
+        background-color: $pre-background;
+    }
+
+    div.footnote {
+        border-top: 1px solid $border;
+        margin: 2rem 0;
+    }
+
+    .entry-tag .entry-tag-link {
+        background: $tag-background;
+        font-weight: bold;
+
+        color: $tag;
+        border: none;
+
+        padding: .2rem .4rem;
+    }
+
+    .heading {
+        margin: 1.5rem 0 0 0;
+    }
+
+    .entry-content {
+        font-size: 1rem;
+
+        h2::before {
+            content: '##';
+            margin-right: .2rem;
+            color: $accent;
+        }
+
+        h3::before {
+            content: '###';
+            margin-right: .2rem;
+            color: $accent;
+        }
+
+        h4::before {
+            content: '####';
+            margin-right: .2rem;
+            color: $accent;
+        }
+
+        h5::before {
+            content: '#####';
+            margin-right: .1rem;
+            color: $accent;
+        }
+
+        h6::before {
+            content: '######';
+            margin-right: .2rem;
+            color: $accent;
+        }
+
+        hr {
+            background-color: $border;
+            border-color: $border;
+        }
+
+        blockquote {
+            border-left: 3px solid $border;
+            padding-left: 1rem;
+        }
+
+        table {
+            margin: 0 auto;
+            overflow-x: scroll;
+            border-collapse: collapse;
+
+            th {
+                padding: .3rem 0;
+                margin: 0;
+                border: 0;
+                border-bottom: 2px double $border;
+
+                min-width: 100px;
+            }
+
+            td {
+                padding: .5rem 0;
+                margin: 0;
+                border: 0;
+                border-bottom: 1px solid $border;
             }
         }
     }
-    .urllist-category-link {
-        font-size: .7rem;
-        padding: .1em .3em;
-    }
-    .urllist-date-link a {
-        color: $text-light;
-    }
-    .urllist-entry-body {
-        margin-top: .3em;
-    }
-}
 
-/* Search module */
-.hatena-module-search-box {
-    .search-form {
-        border: 1px solid $border;
-        border-radius: 3px;
+    .table-of-contents {
+        background-color: $table-of-contents-background;
+        padding: 1rem 2rem 2rem 3rem;
+        border-radius: 7px;
+
+        &::before {
+            content: '- 目次 -';
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            color: $accent;
+        }
+    }
+
+    .images-row {
         width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
     }
-    .search-module-input {
-        flex: 1 0;
-        padding: 5px;
-        color: $text;
-        background: none;
-        border: none;
-        outline: none;
-        height: 20px;
+
+    .hatena-fotolife {
+        border-radius: 7px;
+        box-shadow: 0px 0px 15px -5px  $shadow;
+        width: 100%;
     }
-    .search-module-button {
-        width: 24px;
-        height: 24px;
-        margin-right: 5px;
-        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:none;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Esearch%3C/title%3E%3Cpath d='M16.7,15l-3.4-3.3h-.1a5.4,5.4,0,0,0,.9-3.1,5.6,5.6,0,1,0-5.6,5.6,5.4,5.4,0,0,0,3.1-.9.1.1,0,0,0,.1.1L15,16.7a1.1,1.1,0,0,0,.8.3,1.6,1.6,0,0,0,.9-.3,1.4,1.4,0,0,0,0-1.7M8.5,12.3A3.8,3.8,0,0,1,4.8,8.5,3.8,3.8,0,0,1,8.5,4.7a3.9,3.9,0,0,1,3.8,3.8,3.8,3.8,0,0,1-3.8,3.8'/%3E%3Crect class='a' width='20' height='20'/%3E%3C/svg%3E") no-repeat center;
-        background-size: 20px 20px;
-        border: none;
-        outline: none;
-        color: transparent;
-        overflow: hidden;
-        opacity: .5;
-        cursor: pointer;
-        &:hover {
-            opacity: .85;
+
+    a.hatena-id-icon {
+        vertical-align: middle;
+    }
+
+    img.hatena-id-icon {
+        width: 17px;
+        height: 17px;
+        border-radius: 2px;
+        margin: -5px 3px 0 2px !important;
+    }
+
+    .entry-footer {
+        .entry-footer-section {
+            color: $accent;
+            font-size: .8rem;
+
+            a {
+                text-decoration: none;
+                color: $accent;
+
+                &:hover {
+                    color: $link-hover3;
+                }
+            }
+        }
+
+        .social-buttons {
+            margin-bottom: 3rem;
+
+            /* はてブ */
+            .social-button-item:nth-child(1) {
+                width: 84px;
+            }
+
+            /* facebook */
+            .social-button-item:nth-child(2) {
+                width: 91px;
+            }
+
+            /* X */
+            .social-button-item:nth-child(3) {
+                width: 40px;
+            }
+
+            /* Mastodon */
+            .social-button-item:nth-child(4) {
+                width: 40px;
+            }
+
+            /* Misskey */
+            .social-button-item:nth-child(5) {
+                width: 40px;
+            }
         }
     }
+
 }
 
-/* About ページ */
-.page-about {
-    .entry-content {
-        dt {
-            font-weight: bold;
-            border-bottom: 1px solid $border;
-            margin-bottom: .5em;
-        }
-        dd {
-            margin-left: 0;
-            margin-bottom: 2em;
-        }
-    }
+.google-afc-image {
+    min-height: 280px !important;
+    background-color: $ad-background;
+    border-radius: 7px;
 }
 
-/* Archive */
-.archive-header-category {
-    text-align: center;
+.variable-rectangle-ad {
+    min-height: 280px !important;
+    background-color: $ad-background;
+    border-radius: 7px;
 }
-.page-archive {
-    .archive-entry {
-        margin-bottom: 3em;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.3;
-    }
-    .entry-title {
-        margin: .3em auto;
-    }
-    .entry-thumb {
-        width: 80px;
-        height: 80px;
-        background-size: cover;
-        @media #{$mq-sm} {
-            width: 120px;
-            height: 120px;
+
+.pager.permalink {
+    display: none;
+}
+
+.comment-box {
+    margin: 2rem 0;
+
+    .comment {
+        box-shadow: $box-shadow;
+        border-radius: 10px;
+        padding: 1rem;
+        min-height: 3rem;
+
+        &::before {
+            content: '- コメント -';
+            display: flex;
+            justify-content: center;
+            color: $accent;
+        }
+
+        .entry-comment {
+            margin: 1rem 0;
+            list-style: none;
+
+            + .entry-comment {
+                border-top: 1px solid $border;
+            }
+
+            .comment-metadata {
+                color: $accent;
+                font-size: .8rem;
+            }
         }
     }
-    .entry-description {
-        margin: 0;
-        font-size: .85rem;
-        @media #{$mq-sm} {
-            font-size: .9rem;
-        }
-    }
-    .social-buttons {
+
+    .leave-comment-title {
         display: block;
-        margin-top: .3em;
+        text-align: center;
+        padding: .5rem 1rem;
+        margin: auto;
+
+        background-color: $commend-button-background;
+        border-radius: 10px;
+
+        color: $text;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $commend-button-background-hover;
+            color: #fff;
+        }
     }
 }
 
+.footer-content {
+    margin: 3rem 0 4rem 0;
+    display: flex;
+    justify-content: center;
 
-/* footer */
-#footer {
-    margin-top: 2em;
-    padding-bottom: 2rem;
-    text-align: center;
-    font-size: .8rem;
-    color: $text-light;
     a {
-        color: $text-light;
-    }
-    p {
-        margin: .5em auto;
+        margin: 0 .5rem;
     }
 }
