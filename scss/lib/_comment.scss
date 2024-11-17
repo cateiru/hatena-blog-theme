@@ -1,0 +1,49 @@
+.comment-box {
+    margin: 2rem 0;
+
+    .comment {
+        box-shadow: $box-shadow;
+        border-radius: 10px;
+        padding: 1rem;
+        min-height: 3rem;
+
+        &::before {
+            content: '- コメント -';
+            display: flex;
+            justify-content: center;
+            color: $accent;
+        }
+
+        .entry-comment {
+            margin: 1rem 0;
+            list-style: none;
+
+            + .entry-comment {
+                border-top: 1px solid $border;
+            }
+
+            .comment-metadata {
+                color: $accent;
+                font-size: .8rem;
+            }
+        }
+    }
+
+    .leave-comment-title {
+        display: block;
+        text-align: center;
+        padding: .5rem 1rem;
+        margin: auto;
+
+        background-color: $commend-button-background;
+        border-radius: 10px;
+
+        color: $text;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $commend-button-background-hover;
+            color: #fff;
+        }
+    }
+}

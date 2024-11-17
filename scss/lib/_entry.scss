@@ -1,0 +1,261 @@
+.entry {
+    .entry-date {
+        a {
+            font-size: .9rem;
+            color: $datetime;
+            text-decoration: none;
+
+            &:hover {
+                color: $link-hover3;
+            }
+        }
+
+        // TODO: SVGを中央に配置する
+        .date-last-updated {
+            font-size: .9rem;
+            color: $datetime;
+            text-align: center;
+        }
+    }
+
+    .entry-title {
+        margin: .5rem 0;
+
+        a {
+            color: $text;
+            text-decoration: none;
+            cursor: text;
+        }
+    }
+
+    .categories {
+        margin-bottom: 1rem;
+
+        a {
+            font-size: .8rem;
+            background-color: $category-background;
+            padding: 0 .4rem;
+            border-radius: 3px;
+            color: $category;
+            font-weight: bold;
+            text-decoration: none;
+
+            &:hover {
+                color: $link-hover3;
+            }
+        }
+    }
+
+    .keyword {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .code {
+        background-color: $code-background;
+        padding: .7rem;
+        border-radius: 7px;
+    }
+
+    .entry-content code {
+        background-color: $pre-background;
+    }
+
+    div.footnote {
+        border-top: 1.5px solid $border;
+        margin: 2rem 0;
+    }
+
+    .entry-tag .entry-tag-link {
+        background: $tag-background;
+        font-weight: bold;
+
+        color: $tag;
+        border: none;
+
+        padding: .2rem .4rem;
+    }
+
+    .heading {
+        margin: 1.5rem 0 0 0;
+    }
+
+    .entry-content {
+        font-size: 1rem;
+
+        h2, h3, h4, h5, h6 {
+            margin-top: 2rem;
+        }
+
+        h2::before {
+            content: '##';
+            margin-right: .2rem;
+            color: $accent;
+        }
+
+        h3::before {
+            content: '###';
+            margin-right: .2rem;
+            color: $accent;
+            margin-top: 1rem;
+        }
+
+        h4::before {
+            content: '####';
+            margin-right: .2rem;
+            color: $accent;
+        }
+
+        h5::before {
+            content: '#####';
+            margin-right: .1rem;
+            color: $accent;
+        }
+
+        h6::before {
+            content: '######';
+            margin-right: .2rem;
+            color: $accent;
+        }
+
+        hr {
+            background-color: $border;
+            border-color: $border;
+        }
+
+        table {
+            overflow-x: scroll;
+            border-collapse: collapse;
+            width: 100%;
+
+            th {
+                padding: .3rem 0;
+                margin: 0;
+                border: 0;
+                border-bottom: 2px double $border;
+
+                min-width: 100px;
+            }
+
+            td {
+                padding: .5rem 0;
+                margin: 0;
+                border: 0;
+                border-bottom: 1px solid $border;
+            }
+        }
+
+        // 埋め込みを中央に配置
+        p:has(iframe) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        // 埋め込みリンク
+        .embed-card {
+            border-radius: 7px;
+            box-shadow: 0px 0px 15px -5px  $shadow;
+            height: 149px !important;
+
+            display: inline-block !important;
+            text-align: left;
+        }
+
+        iframe {
+            border-radius: 7px;
+            box-shadow: 0px 0px 15px -5px  $shadow;
+        }
+    }
+
+    .table-of-contents {
+        background-color: $table-of-contents-background;
+        padding: 1rem 2rem 2rem 3rem;
+        border-radius: 7px;
+
+        &::before {
+            content: '- 目次 -';
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            color: $accent;
+        }
+    }
+
+    .images-row {
+        width: 100%;
+    }
+
+    p:has(.hatena-fotolife) {
+        text-align: center;
+    }
+
+    // 画像
+    .hatena-fotolife {
+        border-radius: 7px;
+        box-shadow: 0px 0px 15px -5px  $shadow;
+
+        width: auto;
+        max-height: 700px;
+    }
+
+    a.hatena-id-icon {
+        vertical-align: middle;
+    }
+
+    img.hatena-id-icon {
+        width: 17px;
+        height: 17px;
+        border-radius: 2px;
+        margin: -5px 3px 0 2px !important;
+    }
+
+    .entry-footer {
+        .entry-footer-section {
+            color: $accent;
+            font-size: .8rem;
+
+            a {
+                text-decoration: none;
+                color: $accent;
+
+                &:hover {
+                    color: $link-hover3;
+                }
+            }
+        }
+
+        .social-buttons {
+            margin-bottom: 3rem;
+
+            /* はてブ */
+            .social-button-item:nth-child(1) {
+                width: 84px;
+            }
+
+            /* facebook */
+            .social-button-item:nth-child(2) {
+                width: 91px;
+            }
+
+            /* X */
+            .social-button-item:nth-child(3) {
+                width: 40px;
+            }
+
+            /* Mastodon */
+            .social-button-item:nth-child(4) {
+                width: 40px;
+            }
+
+            /* Misskey */
+            .social-button-item:nth-child(5) {
+                width: 40px;
+            }
+        }
+    }
+
+}
