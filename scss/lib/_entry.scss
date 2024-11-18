@@ -85,41 +85,6 @@
     .entry-content {
         font-size: 1rem;
 
-        h2, h3, h4, h5, h6 {
-            margin-top: 2rem;
-        }
-
-        h2::before {
-            content: '##';
-            margin-right: .2rem;
-            color: $accent;
-        }
-
-        h3::before {
-            content: '###';
-            margin-right: .2rem;
-            color: $accent;
-            margin-top: 1rem;
-        }
-
-        h4::before {
-            content: '####';
-            margin-right: .2rem;
-            color: $accent;
-        }
-
-        h5::before {
-            content: '#####';
-            margin-right: .1rem;
-            color: $accent;
-        }
-
-        h6::before {
-            content: '######';
-            margin-right: .2rem;
-            color: $accent;
-        }
-
         hr {
             background-color: $border;
             border-color: $border;
@@ -145,29 +110,6 @@
                 border: 0;
                 border-bottom: 1px solid $border;
             }
-        }
-
-        // 埋め込みを中央に配置
-        p:has(iframe) {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        // 埋め込みリンク
-        .embed-card {
-            border-radius: 7px;
-            box-shadow: 0px 0px 15px -5px  $shadow;
-            height: 149px !important;
-
-            display: inline-block !important;
-            text-align: left;
-        }
-
-        iframe {
-            border-radius: 7px;
-            box-shadow: 0px 0px 15px -5px  $shadow;
         }
     }
 
