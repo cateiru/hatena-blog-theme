@@ -1,0 +1,20 @@
+.entry {
+    .entry-content {
+        .images-row {
+            width: 100%;
+        }
+
+        p:has(.hatena-fotolife) {
+            text-align: center;
+        }
+
+        // 画像
+        .hatena-fotolife {
+            border-radius: 7px;
+            box-shadow: 0px 0px 15px -5px  $shadow;
+
+            width: auto;
+            max-height: 700px;
+        }
+    }
+}
