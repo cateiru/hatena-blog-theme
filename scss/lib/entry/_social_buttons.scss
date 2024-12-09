@@ -1,0 +1,32 @@
+.entry {
+    .entry-footer {
+        .social-buttons {
+            margin-bottom: 3rem;
+
+            /* はてブ */
+            .social-button-item:nth-child(1) {
+                width: 84px;
+            }
+
+            /* facebook */
+            .social-button-item:nth-child(2) {
+                width: 91px;
+            }
+
+            /* X */
+            .social-button-item:nth-child(3) {
+                width: 40px;
+            }
+
+            /* Mastodon */
+            .social-button-item:nth-child(4) {
+                width: 40px;
+            }
+
+            /* Misskey */
+            .social-button-item:nth-child(5) {
+                width: 40px;
+            }
+        }
+    }
+}

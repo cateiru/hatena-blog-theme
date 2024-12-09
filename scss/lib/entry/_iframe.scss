@@ -22,5 +22,27 @@
             border-radius: 7px;
             box-shadow: 0px 0px 15px -5px  $shadow;
         }
+
+        // 商品紹介カード
+        .hatena-asin-detail {
+            border-radius: 7px;
+            box-shadow: 0px 0px 15px -5px  $shadow;
+
+            .hatena-asin-detail-image {
+                border-radius: 7px;
+            }
+
+            .asin-detail-buy {
+                border-radius: 25px;
+                background-color: $asin-button-bg-color;
+                color: $asin-button-color;
+                transition: box-shadow 0.3s, color 0.3s;
+
+                &:hover {
+                    color: $asin-hover-color;
+                    box-shadow: 0px 0px 15px -5px  $shadow;
+                }
+            }
+        }
     }
 }
