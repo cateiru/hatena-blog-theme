@@ -91,7 +91,8 @@
         }
     }
 
-    .permalink {
+    // 記事内のぺージャーは非表示
+    &.permalink {
         display: none;
     }
 }

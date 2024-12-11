@@ -49,6 +49,13 @@
     }
 }
 
+// 404 ページでは広告は表示しない
+.no-entry {
+    .variable-rectangle-ad {
+        display: none !important;
+    }
+}
+
 
 @media screen and (max-width: 700px) {
     // タイトル下広告（SPのみ）
