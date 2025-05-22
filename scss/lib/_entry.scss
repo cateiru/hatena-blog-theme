@@ -20,6 +20,7 @@
 
     .entry-title {
         margin: .5rem 0;
+        font-size: 1.4rem;
 
         a {
             color: $text;
@@ -112,6 +113,8 @@
     }
 
     .entry-footer {
+        margin-bottom: 3rem;
+
         .entry-footer-section {
             color: $accent;
             font-size: .8rem;

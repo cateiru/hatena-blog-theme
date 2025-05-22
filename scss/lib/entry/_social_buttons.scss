@@ -1,8 +1,6 @@
 .entry {
-    .entry-footer {
+    .entry-header {
         .social-buttons {
-            margin-bottom: 3rem;
-
             /* はてブ */
             .social-button-item:nth-child(1) {
                 width: 84px;
@@ -23,9 +21,35 @@
                 width: 40px;
             }
 
-            /* Misskey */
+            /* Bluesky */
             .social-button-item:nth-child(5) {
                 width: 40px;
+            }
+
+            /* Misskey */
+            .social-button-item:nth-child(6) {
+                width: 40px;
+            }
+        }
+    }
+
+    .entry-footer {
+        .social-buttons {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(400px, -50%);
+
+            // 1000px以上の画面幅で表示する
+            @media screen and (max-width: 1000px) {
+                display: none;
+            }
+
+            // flex は折り返さない
+            flex-direction: column;
+
+            .social-button-item {
+                height: 45px;
             }
         }
     }
