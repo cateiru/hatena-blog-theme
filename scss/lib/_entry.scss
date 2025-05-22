@@ -80,21 +80,6 @@
             border-radius: 25px;
         }
 
-        // 目次
-        .table-of-contents {
-            background-color: $table-of-contents-background;
-            padding: 1rem 2rem 2rem 3rem;
-            border-radius: 7px;
-
-            &::before {
-                content: '- 目次 -';
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                color: $accent;
-            }
-        }
-
         div.footnote {
             border-top: 1.5px solid $border;
             margin: 2rem 0;

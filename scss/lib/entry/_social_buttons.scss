@@ -1,6 +1,10 @@
 .entry {
     .entry-header {
         .social-buttons {
+            @media screen and (min-width: 1001px) {
+                display: none;
+            }
+
             /* はてブ */
             .social-button-item:nth-child(1) {
                 width: 84px;
@@ -39,17 +43,48 @@
             top: 50%;
             left: 50%;
             transform: translate(400px, -50%);
-
-            // 1000px以上の画面幅で表示する
-            @media screen and (max-width: 1000px) {
-                display: none;
-            }
-
-            // flex は折り返さない
             flex-direction: column;
+
+            @media screen and (max-width: 1000px) {
+                position:static;
+                flex-direction: row;
+                top: 0;
+                left: 0;
+                transform: none;
+            }
 
             .social-button-item {
                 height: 45px;
+            }
+
+                        /* はてブ */
+            .social-button-item:nth-child(1) {
+                width: 84px;
+            }
+
+            /* facebook */
+            .social-button-item:nth-child(2) {
+                width: 91px;
+            }
+
+            /* X */
+            .social-button-item:nth-child(3) {
+                width: 40px;
+            }
+
+            /* Mastodon */
+            .social-button-item:nth-child(4) {
+                width: 40px;
+            }
+
+            /* Bluesky */
+            .social-button-item:nth-child(5) {
+                width: 40px;
+            }
+
+            /* Misskey */
+            .social-button-item:nth-child(6) {
+                width: 40px;
             }
         }
     }

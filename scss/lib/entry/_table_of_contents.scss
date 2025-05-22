@@ -1,0 +1,54 @@
+@keyframes table-of-contents-animation {
+    0% {
+        --angle: 0deg;
+    }
+    100% {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.entry {
+  .entry-content {
+    .table-of-contents {
+      background-color: transparent;
+      padding: 2.5rem 2rem 2rem 3rem;
+      position: relative;
+      z-index: 10;
+
+    &::before {
+        content: "目次";
+        background-color: $table-of-contents-background;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 2rem);
+        z-index: -1;
+        border-radius: 7px;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        border-radius: 7px;
+        box-sizing: border-box;
+        background: conic-gradient(from var(--angle) at center, #fff, #17c9c9, #336CFF, #fff, #fff);
+        filter: blur(5px);
+        animation: 7s linear 0s infinite normal none running table-of-contents-animation;
+      }
+    }
+  }
+}
