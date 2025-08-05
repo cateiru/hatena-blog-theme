@@ -1,0 +1,48 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "schedule": [
+    "every weekend"
+  ],
+  "timezone": "Asia/Tokyo",
+  "labels": [
+    "dependencies"
+  ],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5,
+  "commitMessagePrefix": "依存関係更新: ",
+  "commitMessageAction": "アップデート",
+  "prTitle": "依存関係アップデート: {{depName}}",
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true,
+      "automergeType": "pr",
+      "matchUpdateTypes": ["patch", "minor"]
+    },
+    {
+      "matchPackageNames": ["vite"],
+      "groupName": "ビルドツール",
+      "commitMessageTopic": "ビルドツール"
+    },
+    {
+      "matchPackageNames": ["sass", "autoprefixer"],
+      "groupName": "CSS関連",
+      "commitMessageTopic": "CSS関連依存関係"
+    },
+    {
+      "matchPackageNames": ["normalize.css"],
+      "groupName": "CSS フレームワーク",
+      "commitMessageTopic": "CSSフレームワーク"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"]
+  }
+}
