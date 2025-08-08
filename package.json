@@ -12,6 +12,6 @@
     "autoprefixer": "^10.4.14",
     "normalize.css": "^8.0.1",
     "sass": "^1.63.6",
-    "vite": "^4.4.3"
+    "vite": "^7.0.0"
   }
 }
