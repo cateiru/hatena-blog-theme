@@ -47,7 +47,7 @@
 
             @media screen and (min-width: 1000px) {
                 position: fixed;
-                top: 50%;
+                top: 40%;
                 left: 50%;
                 transform: translate(370px, -70%);
                 flex-direction: column;
@@ -55,9 +55,9 @@
 
             @media screen and (min-width: 1440px) {
                 position: fixed;
-                top: 50%;
+                top: 40%;
                 left: 50%;
-                transform: translate(500px, -70%);
+                transform: translate(450px, -70%);
                 flex-direction: column;
             }
 
