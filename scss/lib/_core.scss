@@ -11,17 +11,16 @@ body {
 #container {
     margin: 0 auto;
 
-    @media screen and (min-width: 701px) {
+    width: 94%;
+
+    @media screen and (min-width: 1001px) {
+        width: auto;
         max-width: 700px;
     }
 
-    @media screen and (min-width: 1001px) {
+    @media screen and (min-width: 1441px) {
+        width: auto;
         max-width: 900px;
-    }
-
-
-    @media screen and (max-width: 700px) {
-        width: 94%;
     }
 }
 
