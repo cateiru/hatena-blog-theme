@@ -1,0 +1,17 @@
+.no-entry {
+    .entry-inner {
+        height: 60vh;
+
+        .entry-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+}

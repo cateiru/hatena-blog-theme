@@ -1,0 +1,117 @@
+.entry {
+    .entry-date {
+        a {
+            font-size: .9rem;
+            color: $datetime;
+            text-decoration: none;
+
+            &:hover {
+                color: $link-hover3;
+            }
+        }
+
+        // TODO: SVGを中央に配置する
+        .date-last-updated {
+            font-size: .9rem;
+            color: $datetime;
+            text-align: center;
+        }
+    }
+
+    .entry-title {
+        margin: .5rem 0;
+        font-size: 1.4rem;
+
+        a {
+            color: $text;
+            text-decoration: none;
+            cursor: text;
+        }
+    }
+
+    .categories {
+        margin-bottom: 1rem;
+
+        a {
+            font-size: .8rem;
+            background-color: $category-background;
+            padding: 0 .4rem;
+            border-radius: 3px;
+            color: $category;
+            font-weight: bold;
+            text-decoration: none;
+
+            &:hover {
+                color: $link-hover3;
+            }
+        }
+    }
+
+    .keyword {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .entry-tag .entry-tag-link {
+        background: $tag-background;
+        font-weight: bold;
+
+        color: $tag;
+        border: none;
+
+        padding: .2rem .4rem;
+    }
+
+    .heading {
+        margin: 1.5rem 0 0 0;
+    }
+
+    .entry-content {
+        font-size: 1rem;
+
+        hr {
+            border: none;
+            background-color: $border;
+            width: 100%;
+            height: 2px;
+            z-index: 1;
+            border-radius: 25px;
+        }
+
+        div.footnote {
+            border-top: 1.5px solid $border;
+            margin: 2rem 0;
+        }
+
+        // はてなID記法
+        a.hatena-id-icon {
+            vertical-align: middle;
+        }
+        img.hatena-id-icon {
+            width: 17px;
+            height: 17px;
+            border-radius: 2px;
+            margin: -5px 3px 0 2px !important;
+        }
+    }
+
+    .entry-footer {
+        margin-bottom: 3rem;
+
+        .entry-footer-section {
+            color: $accent;
+            font-size: .8rem;
+
+            a {
+                text-decoration: none;
+                color: $accent;
+
+                &:hover {
+                    color: $link-hover3;
+                }
+            }
+        }
+    }
+}

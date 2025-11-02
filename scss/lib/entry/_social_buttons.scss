@@ -1,0 +1,99 @@
+.entry {
+    .entry-header {
+        .social-buttons {
+            @media screen and (min-width: 1001px) {
+                display: none;
+            }
+
+            /* はてブ */
+            .social-button-item:nth-child(1) {
+                width: 84px;
+            }
+
+            /* facebook */
+            .social-button-item:nth-child(2) {
+                width: 91px;
+            }
+
+            /* X */
+            .social-button-item:nth-child(3) {
+                width: 40px;
+            }
+
+            /* Mastodon */
+            .social-button-item:nth-child(4) {
+                width: 40px;
+            }
+
+            /* Bluesky */
+            .social-button-item:nth-child(5) {
+                width: 40px;
+            }
+
+            /* Misskey */
+            .social-button-item:nth-child(6) {
+                width: 40px;
+            }
+        }
+    }
+
+    .entry-footer {
+        .social-buttons {
+            position: static;
+            flex-direction: row;
+            top: 0;
+            left: 0;
+            transform: none;
+
+            @media screen and (min-width: 1000px) {
+                position: fixed;
+                top: 40%;
+                left: 50%;
+                transform: translate(370px, -70%);
+                flex-direction: column;
+            }
+
+            @media screen and (min-width: 1440px) {
+                position: fixed;
+                top: 40%;
+                left: 50%;
+                transform: translate(450px, -70%);
+                flex-direction: column;
+            }
+
+            .social-button-item {
+                height: 45px;
+            }
+
+                        /* はてブ */
+            .social-button-item:nth-child(1) {
+                width: 84px;
+            }
+
+            /* facebook */
+            .social-button-item:nth-child(2) {
+                width: 91px;
+            }
+
+            /* X */
+            .social-button-item:nth-child(3) {
+                width: 40px;
+            }
+
+            /* Mastodon */
+            .social-button-item:nth-child(4) {
+                width: 40px;
+            }
+
+            /* Bluesky */
+            .social-button-item:nth-child(5) {
+                width: 40px;
+            }
+
+            /* Misskey */
+            .social-button-item:nth-child(6) {
+                width: 40px;
+            }
+        }
+    }
+}

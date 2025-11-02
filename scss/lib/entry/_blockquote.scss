@@ -1,0 +1,124 @@
+.entry {
+    .entry-content {
+
+        // 引用のスタイル
+        // GitHubのよう[^1]に Note や Warning などの表示ができます。
+        // 使い方:
+        //
+        // ```markdown
+        // > <p class="note">NOTE</p>
+        // > これはNoteです。
+        // ```
+        //
+        // [^1]: https://github.com/orgs/community/discussions/16925
+        blockquote {
+            padding-left: 1.5rem;
+            margin-left: 0;
+            margin-right: 1rem;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: inline-block;
+                left: 0;
+                top: 0;
+
+                background-color: $border;
+                border-radius: 10px;
+                height: 100%;
+                width: 5px;
+            }
+
+            // 各種アイコン
+            p.note {
+                &::before {
+                    content: "";
+                    width: 1rem;
+                    height: 1rem;
+                    padding-right: .5rem;
+                    display:  inline-block;
+                    mask-size: 1.5cap;
+                    mask-repeat: no-repeat;
+                    mask-image: url($blockquote-image-note);
+                    background-color: $blockquote-color-note;
+                }
+                color: $blockquote-color-note;
+            }
+            p.tip {
+                &::before {
+                    content: "";
+                    width: 1rem;
+                    height: 1rem;
+                    padding-right: .5rem;
+                    display:  inline-block;
+                    mask-size: 1.5cap;
+                    mask-repeat: no-repeat;
+                    mask-image: url($blockquote-image-tip);
+                    background-color: $blockquote-color-tip;
+                }
+                color: $blockquote-color-tip;
+            }
+            p.important {
+                &::before {
+                    content: "";
+                    width: 1rem;
+                    height: 1rem;
+                    padding-right: .5rem;
+                    display:  inline-block;
+                    mask-size: 1.5cap;
+                    mask-repeat: no-repeat;
+                    mask-image: url($blockquote-image-important);
+                    background-color: $blockquote-color-important;
+                }
+                color: $blockquote-color-important;
+            }
+            p.warning {
+                &::before {
+                    content: "";
+                    width: 1rem;
+                    height: 1rem;
+                    padding-right: .5rem;
+                    display:  inline-block;
+                    mask-size: 1.5cap;
+                    mask-repeat: no-repeat;
+                    mask-image: url($blockquote-image-warning);
+                    background-color: $blockquote-color-warning;
+                }
+                color: $blockquote-color-warning;
+            }
+            p.caution {
+                &::before {
+                    content: "";
+                    width: 1rem;
+                    height: 1rem;
+                    padding-right: .5rem;
+                    display:  inline-block;
+                    mask-size: 1.5cap;
+                    mask-repeat: no-repeat;
+                    mask-image: url($blockquote-image-caution);
+                    background-color: $blockquote-color-caution;
+                    line-height: 100%;
+                }
+                color: $blockquote-color-caution;
+            }
+
+            // 引用の線の色を各ステータスに応じて変更する
+            &:has(p.note)::before {
+                background-color: $blockquote-color-note;
+            }
+            &:has(p.tip)::before {
+                background-color: $blockquote-color-tip;
+            }
+            &:has(p.important)::before {
+                background-color: $blockquote-color-important;
+            }
+            &:has(p.warning)::before {
+                background-color: $blockquote-color-warning;
+            }
+            &:has(p.caution)::before {
+                background-color: $blockquote-color-caution;
+            }
+        }
+    }
+}

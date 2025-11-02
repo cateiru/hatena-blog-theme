@@ -1,19 +1,28 @@
 @charset "utf-8";
-/*
-  Theme: boilerplate
-  Author: Hatena Blog Team
+/*!
+  Theme: Cateiru
+  Author: cateiru
   Responsive: yes
-  Description:
-    はてなブログのデザインCSSカスタマイズの土台に適したデザインテーマです。
-    このテーマをもとにしてCSSを書くと比較的楽にカスタマイズできます。
-    特定の部分（例えば記事本文の書式やコメント欄のスタイルなど）だけをコピーして使ってもかまいません。
-    もちろんそのままの状態でも、シンプルなテーマとして使うことができます。
-    このCSSおよびSCSSファイルは自由に複製・再配布できます。
-    このテーマをもとにしたデザインテーマの配布も自由です。
-  Released under the MIT License.
 */
 
-@import "normalize.css";
+// @import "normalize.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
 
 @import "./lib/_variable";
 @import "./lib/_core";
+@import "./lib/_ad";
+@import "./lib/_comment";
+@import "./lib/_pager";
+@import "./lib/_not_found";
+
+@import "./lib/_entry";
+@import "./lib/entry/_blockquote";
+@import "./lib/entry/_iframe";
+@import "./lib/entry/_heading";
+@import "./lib/entry/_table";
+@import "./lib/entry/_image";
+@import "./lib/entry/_code";
+@import "./lib/entry/_social_buttons";
+@import "./lib/entry/_table_of_contents";

@@ -1,0 +1,15 @@
+.entry {
+    .entry-content {
+        // コードブロック
+        .code {
+            background-color: $code-background;
+            padding: .7rem;
+            border-radius: 7px;
+        }
+
+        code {
+            background-color: $pre-background;
+            border: none;
+        }
+    }
+}
