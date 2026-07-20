@@ -7,22 +7,21 @@
 
 // @import "normalize.css";
 
+@use "./lib/_variable";
+@use "./lib/_core";
+@use "./lib/_ad";
+@use "./lib/_comment";
+@use "./lib/_pager";
+@use "./lib/_not_found";
+
+@use "./lib/_entry";
+@use "./lib/entry/_blockquote";
+@use "./lib/entry/_iframe";
+@use "./lib/entry/_heading";
+@use "./lib/entry/_table";
+@use "./lib/entry/_image";
+@use "./lib/entry/_code";
+@use "./lib/entry/_social_buttons";
+@use "./lib/entry/_table_of_contents";
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=LINE+Seed+JP:wght@400;700&display=swap');
-
-
-@import "./lib/_variable";
-@import "./lib/_core";
-@import "./lib/_ad";
-@import "./lib/_comment";
-@import "./lib/_pager";
-@import "./lib/_not_found";
-
-@import "./lib/_entry";
-@import "./lib/entry/_blockquote";
-@import "./lib/entry/_iframe";
-@import "./lib/entry/_heading";
-@import "./lib/entry/_table";
-@import "./lib/entry/_image";
-@import "./lib/entry/_code";
-@import "./lib/entry/_social_buttons";
-@import "./lib/entry/_table_of_contents";
