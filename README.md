@@ -4,7 +4,7 @@ Boilerplate は、はてなブログのデザインCSSカスタマイズの土�
 
 はてなブログの必要最小限の見た目が調整されています。「オリジナルテーマの制作にチャレンジしたいけど、0から作るのが大変」という方は、このデザインテーマをもとにしてCSSを書くと比較的楽にテーマが作れます。
 
-*Boilerplateは自己責任でご利用ください。お問い合わせははてなブログのサポートフォームではなく、本リポジトリのIssueにお願いします。*
+_Boilerplateは自己責任でご利用ください。お問い合わせははてなブログのサポートフォームではなく、本リポジトリのIssueにお願いします。_
 
 デザインテーマの制作にあたっては下記ヘルプページも参考にしてください。
 
@@ -26,7 +26,7 @@ SCSSで開発する場合は、下記の手順でリポジトリのcloneとモ�
 
 ## モジュールのインストール
 
-``` console
+```console
 $ git clone https://github.com/hatena/Hatena-Blog-Theme-Boilerplate.git
 $ cd Hatena-Blog-Theme-Boilerplate
 $ npm install
@@ -40,22 +40,27 @@ $ npm install
 
 下記のコマンドで、開発サーバーを起動します。
 
-``` console
-$ npm start
+```console
+$ pnpm start
 ```
 
 つづいて、[はてなブログ](https://blog.hatena.ne.jp/)の設定を行います。
 
 1. テーマの動作確認に使うブログを1つ用意します。（普段お使いのブログとは別にブログを作成してください。）
 2. 1.のブログの「デザイン設定」にアクセスし、「カスタマイズ」タブの「デザインCSS」の内容を下記に置き換えて保存します。
-    ``` css
-    /* Responsive: yes */
-    ```
+   ```css
+   /* Responsive: yes */
+   ```
 3. 1.のブログの「設定」->「詳細設定」にアクセスし、「&lt;head&gt;要素にメタデータを追加」を下記に置き換えて保存します。
-    ``` html
-    <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <link rel="stylesheet" crossorigin="anonymous" type="text/css" href="http://localhost:5173/scss/boilerplate.scss" />
-    ```
+   ```html
+   <script type="module" src="http://localhost:5173/@vite/client"></script>
+   <link
+     rel="stylesheet"
+     crossorigin="anonymous"
+     type="text/css"
+     href="http://localhost:5173/scss/boilerplate.scss"
+   />
+   ```
 
 以上の設定が完了すると、動作確認用のブログに開発中のテーマが反映されます。ブログにアクセスし、表示を確認しながらテーマの開発を行なってください。
 
@@ -63,8 +68,8 @@ $ npm start
 
 テーマの開発が完了したら、下記のコマンドでSCSSをコンパイルします。コンパイルの結果は `build/boilderplate.css` に出力されます。
 
-``` console
-$ npm run build
+```console
+$ pnpm run build
 ```
 
 # 構成
