@@ -39,8 +39,9 @@ a {
 
 // ブログタイトル
 h1#title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
+    font-family: $font-family-line-seed;
     margin: 4rem 0;
 
     background: $title;
@@ -52,10 +53,7 @@ h1#title {
     }
 
     a {
-        color: #00000000; // 透明度0
-        background: $title;
-        background-clip: text;
-        -webkit-background-clip: text;
+        color: $text; // 透明度0
         text-decoration-line: none;
     }
 }
