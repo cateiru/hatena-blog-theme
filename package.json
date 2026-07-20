@@ -4,6 +4,7 @@
   "description": "Boilerplate for Hatena Blog theme",
   "author": "Hatena Blog",
   "license": "MIT",
+  "packageManager": "pnpm@11.3.0",
   "scripts": {
     "start": "vite",
     "build": "vite build"
